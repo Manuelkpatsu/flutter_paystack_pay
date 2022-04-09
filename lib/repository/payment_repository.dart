@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_paystack/flutter_paystack.dart';
-import 'package:uuid/uuid.dart';
+import 'package:paystack_payment/util/helper.dart';
 
 class PaymentRepository {
   /// Your paystack public key.
   static const String publicKey =
       'pk_test_d5983ffd11079b19141e3a478d3d53323c2126fa';
   final PaystackPlugin _plugin = PaystackPlugin();
-  Uuid uuid = const Uuid();
 
   PaymentRepository();
 
@@ -22,7 +21,7 @@ class PaymentRepository {
   }) async {
     Charge charge = Charge()
       ..amount = (amount * 100).toInt()
-      ..reference = uuid.v4()
+      ..reference = Helper().generateUniqueId()
       ..email = email
       ..currency = 'GHS';
 
