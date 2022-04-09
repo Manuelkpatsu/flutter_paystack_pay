@@ -13,6 +13,8 @@ dependencies:
   functional_listener: ^2.0.2
   rxdart: ^0.26.0
   equatable: ^2.0.3
+  flutter_paystack: ^1.0.5+1
+  uuid: ^3.0.6
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
