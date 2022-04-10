@@ -5,6 +5,7 @@ import 'package:paystack_payment/repository/payment_repository.dart';
 import 'screen/card_payment/card_payment_notifier.dart';
 import 'screen/home/home_notifier.dart';
 import 'screen/navigation_controller.dart';
+import 'screen/selectable_payment/selectable_payment_notifier.dart';
 
 final GetIt get = GetIt.instance;
 
@@ -17,6 +18,11 @@ void setUpLocator() {
 
   get.registerFactoryParam<CardPaymentNotifier, BuildContext, void>(
     (context, _) => CardPaymentNotifier(get<PaymentRepository>(), context),
+  );
+
+  get.registerFactoryParam<SelectablePaymentNotifier, BuildContext, void>(
+    (context, _) =>
+        SelectablePaymentNotifier(get<PaymentRepository>(), context),
   );
 
   get.registerFactoryParam<HomeNotifier, BuildContext, void>(
